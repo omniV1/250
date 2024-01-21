@@ -23,3 +23,4 @@
 
 ---
 ### Program running with a board that has live bombs and unassigned neighbor cells. 
+![Running program](https://github.com/omniV1/250/blob/main/screenshots/program-running.png)
