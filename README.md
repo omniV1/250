@@ -8,4 +8,5 @@
 
 
 This UML diagram represents the Board class and has the implementation asked in the rubric. 
+
 ![Board](https://github.com/omniV1/250/blob/main/src/BuisnessLayer/Program/Board.cs) 
