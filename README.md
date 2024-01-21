@@ -7,10 +7,12 @@
 
 
 
-1.) This UML diagram represents the Board class and has the implementation asked in the rubric. 
+1. This UML diagram represents the Board class and has the implementation asked in the rubric. 
 
 ![Board](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Board-class.drawio.png) 
 
-1.) This UML represents a single Cell with the default values and its constructor. 
+1. This UML represents a single Cell with the default values and its constructor. 
 
-![Cell](https://github.com/omniV1/250/blob/main/src/BuisnessLayer/Program/Cell.cs
+![Cell](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Cell-Class.drawio.png)
+
+1.
