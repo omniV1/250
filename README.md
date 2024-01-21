@@ -11,8 +11,10 @@
 
 ![Board](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Board-class.drawio.png) 
 
-1. This UML represents a single Cell with the default values and its constructor. 
+2. This UML represents a single Cell with the default values and its constructor. 
 
 ![Cell](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Cell-Class.drawio.png)
 
-1.
+3. This UML represents the entry point for our minesweeper program.
+
+![Program]()
