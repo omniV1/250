@@ -17,4 +17,4 @@
 
 3. This UML represents the entry point for our minesweeper program.
 
-![Program]()
+![Program](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Program-class.drawio.png)
