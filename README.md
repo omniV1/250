@@ -7,6 +7,7 @@
 
 
 
+
 1. This UML diagram represents the Board class and has the implementation asked in the rubric. 
 
 ![Board](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Board-class.drawio.png) 
@@ -18,3 +19,6 @@
 3. This UML represents the entry point for our minesweeper program.
 
 ![Program](https://github.com/omniV1/250/blob/main/UML-diagrams/CST-250-Program-class.drawio.png)
+
+---
+### Program running with a board that has live bombs and unassigned neighbor cells. 
