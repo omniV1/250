@@ -4,6 +4,7 @@
 | --------- | -------- | ----------------- |
 | SRC       | source code for milestone project | Milestone 1 | 
 | UML       | houses all class UML class diagrams | Milestone 1 | 
+| screenshot | shows running application program.cs | Milestone 1 | 
 
 
 
