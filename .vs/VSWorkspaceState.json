@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\BuisnessLayer",
+    "\\src\\BuisnessLayer\\Program",
+    "\\UML-diagrams"
   ],
-  "SelectedNode": "\\C:\\Users\\Owenl\\Source\\Repos\\250",
+  "SelectedNode": "\\UML-diagrams\\CST-250-Board-class.drawio.png",
   "PreviewInSolutionExplorer": false
 }
