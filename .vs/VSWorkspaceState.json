@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\BuisnessLayer",
-    "\\src\\BuisnessLayer\\Program",
-    "\\UML-diagrams"
+    "\\Activities"
   ],
-  "SelectedNode": "\\UML-diagrams\\CST-250-Board-class.drawio.png",
+  "SelectedNode": "\\Activities",
   "PreviewInSolutionExplorer": false
 }
