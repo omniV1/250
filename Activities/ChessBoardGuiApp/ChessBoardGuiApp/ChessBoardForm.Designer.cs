@@ -48,11 +48,12 @@
             cmbSelectPieces.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSelectPieces.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cmbSelectPieces.FormattingEnabled = true;
-            cmbSelectPieces.Items.AddRange(new object[] { "Bishop", "King ", "Queen", "Rook", "Knight", "Pawn" });
+            cmbSelectPieces.Items.AddRange(new object[] { "Bishop", "King ", "Queen", "Rook", "Knight", "Pawn_White", "Pawn_Black" });
             cmbSelectPieces.Location = new Point(451, 20);
             cmbSelectPieces.Name = "cmbSelectPieces";
             cmbSelectPieces.Size = new Size(121, 27);
             cmbSelectPieces.TabIndex = 1;
+            cmbSelectPieces.SelectedIndexChanged += CmbSelectPieces_SelectedIndexChanged;
             // 
             // pnlChessBoard
             // 

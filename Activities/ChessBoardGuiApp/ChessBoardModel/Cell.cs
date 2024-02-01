@@ -12,17 +12,23 @@ namespace ChessBoardModel
         public int RowNumber { get; set; }
         public int ColumnNumber { get; set; }
 
-        // T/F is the chess piece on this cell? 
-        public bool CurrentlyOcupied { get; set; }
+        // T/F is there a chess piece on this cell? 
+        public bool CurrentlyOccupied { get; set; }
+
+        // T/F is there a chess piece on this cell? 
+        public bool CurrentlyOccupiedByOpponent { get; set; }
 
         //is this square a legal move for the chess piece on the board? 
         public bool LegalNextMove { get; set; }
 
         // constructor
-        public Cell(int r, int c)
+        public Cell(int row, int col)
         {
-            RowNumber = r;
-            ColumnNumber = c;
+            RowNumber = row;
+            ColumnNumber = col;
+            CurrentlyOccupied = false;
+            CurrentlyOccupiedByOpponent = false;
+            LegalNextMove = false;
         }
     }
 }

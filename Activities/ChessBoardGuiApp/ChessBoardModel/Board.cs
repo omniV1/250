@@ -105,40 +105,32 @@ namespace ChessBoardModel
                     }
                     break;
 
-                case "Pawn":
-                    // Assuming the pawn is moving up the board
-                    if (currentCell.RowNumber > 0) // Ensure pawn is not on the top row
-                    {
-                        // Move forward
+                case "Pawn_White":
+                    // Move forward
+                    if (currentCell.RowNumber - 1 >= 0 && !theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber].CurrentlyOccupied)
                         theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber].LegalNextMove = true;
-                        // Capture diagonally left
-                        if (currentCell.ColumnNumber > 0)
-                            theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber - 1].LegalNextMove = true;
-                        // Capture diagonally right
-                        if (currentCell.ColumnNumber < Size - 1)
-                            theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber + 1].LegalNextMove = true;
-                    }
+
+                    // Capture diagonally left
+                    if (currentCell.RowNumber - 1 >= 0 && currentCell.ColumnNumber - 1 >= 0 && theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber - 1].CurrentlyOccupiedByOpponent)
+                        theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber - 1].LegalNextMove = true;
+
+                    // Capture diagonally right
+                    if (currentCell.RowNumber - 1 >= 0 && currentCell.ColumnNumber + 1 < Size && theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber + 1].CurrentlyOccupiedByOpponent)
+                        theGrid[currentCell.RowNumber - 1, currentCell.ColumnNumber + 1].LegalNextMove = true;
                     break;
 
-                case "Queen":
-                    // Combines Rook and Bishop moves
-                    // Horizontal and vertical moves (like Rook)
-                    for (int i = 0; i < Size; i++)
-                    {
-                        theGrid[currentCell.RowNumber, i].LegalNextMove = true;
-                        theGrid[i, currentCell.ColumnNumber].LegalNextMove = true;
-                    }
-                    // Diagonal moves (like Bishop)
-                    for (int i = -Size; i < Size; i++)
-                    {
-                        if (currentCell.RowNumber + i >= 0 && currentCell.RowNumber + i < Size)
-                        {
-                            if (currentCell.ColumnNumber + i >= 0 && currentCell.ColumnNumber + i < Size)
-                                theGrid[currentCell.RowNumber + i, currentCell.ColumnNumber + i].LegalNextMove = true;
-                            if (currentCell.ColumnNumber - i >= 0 && currentCell.ColumnNumber - i < Size)
-                                theGrid[currentCell.RowNumber + i, currentCell.ColumnNumber - i].LegalNextMove = true;
-                        }
-                    }
+                case "Pawn_Black":
+                    // Move forward
+                    if (currentCell.RowNumber + 1 < Size && !theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber].CurrentlyOccupied)
+                        theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber].LegalNextMove = true;
+
+                    // Capture diagonally left
+                    if (currentCell.RowNumber + 1 < Size && currentCell.ColumnNumber - 1 >= 0 && theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber - 1].CurrentlyOccupiedByOpponent)
+                        theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber - 1].LegalNextMove = true;
+
+                    // Capture diagonally right
+                    if (currentCell.RowNumber + 1 < Size && currentCell.ColumnNumber + 1 < Size && theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber + 1].CurrentlyOccupiedByOpponent)
+                        theGrid[currentCell.RowNumber + 1, currentCell.ColumnNumber + 1].LegalNextMove = true;
                     break;
 
                 case "King":
@@ -160,5 +152,7 @@ namespace ChessBoardModel
                     break;
             }
         }
+
+      
     }
 }

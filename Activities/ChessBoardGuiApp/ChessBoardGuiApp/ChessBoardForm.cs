@@ -5,15 +5,16 @@ namespace ChessBoardGuiApp
 {
     public partial class ChessBoardForm : Form
     {
+        private string selectedPiece;
         static public Board myBoard = new Board(8);
         public Button[,] btnGrid = new Button[myBoard.Size, myBoard.Size];
 
         public ChessBoardForm()
         {
             InitializeComponent();
-            populateGrid();
+            PopulateGrid();
         }
-        public void populateGrid()
+        public void PopulateGrid()
         {
             //This function will fill the pnlChessBoard control w buttons
             // cal the button width of each button on the Grid 
@@ -51,42 +52,64 @@ namespace ChessBoardGuiApp
             }
         }
 
-        private void Grid_Button_Click(object? sender, EventArgs e)
+        // This method is called when a grid button is clicked.
+        private void Grid_Button_Click(object sender, EventArgs e)
         {
-            // get the row and column number of the button we just clicked 
-            string[] strArr = (sender as Button).Tag.ToString().Split('|');
-            int r = int.Parse(strArr[0]);
-            int c = int.Parse(strArr[1]);
+            Button clickedButton = (Button)sender;
+            string[] position = clickedButton.Tag.ToString().Split('|');
+            int row = int.Parse(position[0]);
+            int col = int.Parse(position[1]);
 
-            //RUN A HELPER FUNVTION TO LABEL ALL LEGAL MOVES FOR THIS PIECE
-            Cell curentCell = myBoard.theGrid[r, c];
-            myBoard.MarkNextLegalMoves(curentCell, "Knight");
-            UpdateButtonLabels();
+            // Reset all cells to not occupied before setting the new piece
+            ResetBoardOccupation();
 
-            // reset the background color of all button to default
-            for (int i = 0; i < myBoard.Size; i++)
-            {
-                for (int j = 0; j < myBoard.Size; j++)
-                {
-                    btnGrid[r, c].BackColor = default(Color);
-                }
-            }
+            // Set the current cell to occupied
+            myBoard.theGrid[row, col].CurrentlyOccupied = true;
 
-            // set the background color of the clicked button to something else 
-            (sender as Button).BackColor = Color.Gainsboro;
+            // Run the helper function to mark legal moves
+            myBoard.MarkNextLegalMoves(myBoard.theGrid[row, col], selectedPiece);
+
+            // Update the button labels to reflect the changes
+            UpdateButtonLabels(selectedPiece);
         }
 
-        public void UpdateButtonLabels()
+        // This resets the CurrentlyOccupied property for all cells on the board.
+        private void ResetBoardOccupation()
+        {
+            foreach (Cell cell in myBoard.theGrid)
+            {
+                cell.CurrentlyOccupied = false;
+            }
+        }
+
+        // This method updates the text of the buttons on the grid.
+        public void UpdateButtonLabels(string chessPiece)
         {
             for (int r = 0; r < myBoard.Size; r++)
             {
                 for (int c = 0; c < myBoard.Size; c++)
                 {
                     btnGrid[r, c].Text = "";
-                    if (myBoard.theGrid[r, c].CurrentlyOcupied) btnGrid[r, c].Text = "Knight";
-                    if (myBoard.theGrid[r, c].LegalNextMove) btnGrid[r, c].Text = "Legal";
+                    if (myBoard.theGrid[r, c].CurrentlyOccupied)
+                        btnGrid[r, c].Text = chessPiece;
+                    else if (myBoard.theGrid[r, c].LegalNextMove)
+                        btnGrid[r, c].Text = "Legal";
                 }
             }
         }
+
+        // This method is called when the selected item in the ComboBox changes.
+        private void CmbSelectPieces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Update the selectedPiece variable with the selected item from the ComboBox
+            selectedPiece = cmbSelectPieces.SelectedItem.ToString();
+
+            // Assuming you want to reset the board each time you change the selection
+            ResetBoardOccupation();
+
+            // Refresh the board
+            UpdateButtonLabels(selectedPiece);
+        }
+
     }
 }
