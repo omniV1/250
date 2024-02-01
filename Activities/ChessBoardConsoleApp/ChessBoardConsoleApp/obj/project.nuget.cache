@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "TpbUKy2zl9El/U3lwALVODDA4LplldTV1T2qzD3+ua4rWQACQqxdrebege9254yTCYxxZfy/gbuTgTXXOqlQkw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardConsoleApp\\ChessBoardConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Owenl\\.nuget\\packages\\microsoft.netcore.app.host.win-x86\\6.0.24\\microsoft.netcore.app.host.win-x86.6.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

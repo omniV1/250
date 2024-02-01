@@ -1,0 +1,14 @@
+{
+  "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "v0NGzn8T2wE7J6U+94t/VCiMGYqF0HKZNBtbOFjk0/dkguVbN8S3Gk4Wwhb5P+fbLtD7kpNWFTEX+dlXpHi8JA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
+=======
+  "dgSpecHash": "Mznbjy74SDmB2nLjdx8iEiJS47F8KQ6deOQmSmOnnYvDg5NaCSU6RI6HuBJoCps3Yigx1NNvSGP40pb+HThyTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
+>>>>>>> 77e090ae21a5cbde236df467ba4eb42be327d64a
+  "expectedPackageFiles": [],
+  "logs": []
+}
