@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessBoardmodel
+namespace ChessBoardModel
 {
-    class Cell
+   public class Cell
     {
         // row and col are the cell's location on the grid.
         public int RowNumber { get; set; }
@@ -21,7 +21,7 @@ namespace ChessBoardmodel
         // constructor
         public Cell(int r, int c)
         {
-            RowNumber = r; 
+            RowNumber = r;
             ColumnNumber = c;
         }
     }
