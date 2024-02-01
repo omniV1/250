@@ -9,13 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="ChessBoardModel\ChessBoardmodel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ChessBoardModel\bin\Release\net6.0\" />
-    <Folder Include="ChessBoardModel\obj\Release\net6.0\refint\" />
-    <Folder Include="ChessBoardModel\obj\Release\net6.0\ref\" />
+    <ProjectReference Include="..\ChessBoardModel\ChessBoardmodel.csproj" />
   </ItemGroup>
 
 </Project>
