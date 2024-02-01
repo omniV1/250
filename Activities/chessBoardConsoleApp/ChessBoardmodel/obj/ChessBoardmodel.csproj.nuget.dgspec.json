@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\chessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj": {}
+    "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\chessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj": {
+    "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\chessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
+        "projectUniqueName": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
         "projectName": "ChessBoardmodel",
-        "projectPath": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\chessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
+        "projectPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
         "packagesPath": "C:\\Users\\Owenl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\chessBoardConsoleApp\\ChessBoardmodel\\obj\\",
+        "outputPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Owenl\\AppData\\Roaming\\NuGet\\NuGet.Config",
