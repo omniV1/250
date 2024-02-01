@@ -1,0 +1,5 @@
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.AssemblyInfo.cs
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.csproj.CoreCompileInputs.cache

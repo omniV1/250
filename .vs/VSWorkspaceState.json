@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Activities",
-    "\\Activities\\chessBoardConsoleApp",
-    "\\Activities\\chessBoardConsoleApp\\chessBoardConsoleApp"
+    "\\Activities"
   ],
-  "SelectedNode": "\\Activities\\chessBoardConsoleApp\\chessBoardConsoleApp.sln",
+  "SelectedNode": "\\Activities",
   "PreviewInSolutionExplorer": false
 }

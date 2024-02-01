@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessBoardmodel
+namespace ChessBoardModel
 {
-    class Board
+   public class Board
     {
         // the board is always square. Usually 8x8
         public int Size { get; set; }
 
         // 2d array of Cell object 
         public Cell[,] theGrid;
-       
+
 
         // constructor
         public Board(int s)
@@ -69,21 +69,21 @@ namespace ChessBoardmodel
                     // Horizontal and vertical moves
                     for (int i = 0; i < Size; i++)
                     {
-                        
+
                         // Horizontal moves
                         // Skip the rook's current column
-                        if (i != currentCell.ColumnNumber) 
+                        if (i != currentCell.ColumnNumber)
                             theGrid[currentCell.RowNumber, i].LegalNextMove = true;
 
                         // Vertical moves
                         // Skip the rook's current row
-                        if (i != currentCell.RowNumber) 
+                        if (i != currentCell.RowNumber)
                             theGrid[i, currentCell.ColumnNumber].LegalNextMove = true;
                     }
                     break;
 
                 case "Bishop":
-                    
+
                     // Diagonal moves
                     for (int i = 1; i < Size; i++)
                     {
@@ -146,9 +146,9 @@ namespace ChessBoardmodel
                     for (int rowOffset = -1; rowOffset <= 1; rowOffset++)
                     {
                         for (int colOffset = -1; colOffset <= 1; colOffset++)
-                        {    
+                        {
                             // Skip the current cell
-                            if (rowOffset == 0 && colOffset == 0) continue; 
+                            if (rowOffset == 0 && colOffset == 0) continue;
                             int newRow = currentCell.RowNumber + rowOffset;
                             int newCol = currentCell.ColumnNumber + colOffset;
                             if (newRow >= 0 && newRow < Size && newCol >= 0 && newCol < Size)
@@ -162,5 +162,3 @@ namespace ChessBoardmodel
         }
     }
 }
-
-    
