@@ -18,17 +18,17 @@ class Program
             {
                 for (int j = 0; j < myBoard.Size; j++)
                 {
-                    if (myBoard.theGrid[i,j].CurrentlyOcupied)
+                    if (myBoard.theGrid[i, j].CurrentlyOcupied)
                     {
-                        Console.WriteLine("X"); 
+                        Console.Write("X");
                     }
-                    else if (myBoard.theGrid[i,j].LegalNextMove)
+                    else if (myBoard.theGrid[i, j].LegalNextMove)
                     {
-                        Console.WriteLine("+");
+                        Console.Write("+");
                     }
                     else
                     {
-                        Console.WriteLine(".");
+                        Console.Write(".");
                     }
                       
                 }

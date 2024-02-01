@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "v0NGzn8T2wE7J6U+94t/VCiMGYqF0HKZNBtbOFjk0/dkguVbN8S3Gk4Wwhb5P+fbLtD7kpNWFTEX+dlXpHi8JA==",
+  "dgSpecHash": "UvYm1d9CG3RMlyFuLPR/+Nj5lQMHuCQ7jc7V4FXD5xJVtfCtXJu4+FENu1J5TvAiM79HehWyLWvWSToOIUOj2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardmodel\\ChessBoardmodel.csproj",
-=======
-  "dgSpecHash": "Mznbjy74SDmB2nLjdx8iEiJS47F8KQ6deOQmSmOnnYvDg5NaCSU6RI6HuBJoCps3Yigx1NNvSGP40pb+HThyTA==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
->>>>>>> 77e090ae21a5cbde236df467ba4eb42be327d64a
+  "projectFilePath": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

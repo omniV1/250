@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "ChessBoardModel/1.0.0": {
+      "ChessBoardmodel/1.0.0": {
         "runtime": {
-          "ChessBoardModel.dll": {}
+          "ChessBoardmodel.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "ChessBoardModel/1.0.0": {
+    "ChessBoardmodel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
+      "projectUniqueName": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
       "projectName": "ChessBoardModel",
-      "projectPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
+      "projectPath": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj",
       "packagesPath": "C:\\Users\\Owenl\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\obj\\",
+      "outputPath": "C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Owenl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,5 +64,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Owenl\\Source\\Repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

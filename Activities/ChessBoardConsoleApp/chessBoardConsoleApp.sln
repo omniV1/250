@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoardConsoleApp", "ChessBoardConsoleApp\ChessBoardConsoleApp.csproj", "{6CDAE6B2-DA50-4128-84D7-FD7B1907EB83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessBoardConsoleApp", "ChessBoardConsoleApp\ChessBoardConsoleApp.csproj", "{6CDAE6B2-DA50-4128-84D7-FD7B1907EB83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessBoardModel", "ChessBoardModel\ChessBoardModel.csproj", "{DF20A389-066D-48CB-836E-35301C5C5025}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChessBoardModel", "ChessBoardModel\ChessBoardModel.csproj", "{DF20A389-066D-48CB-836E-35301C5C5025}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
