@@ -20,7 +20,9 @@
 
 ### Src code 
 
- - This code reprsents the game board, which is a square grid of cells. 
+ - This code reprsents the game board, which is a square grid of cells.
+
+   
 
 ``` C#
 {
@@ -123,7 +125,11 @@ public class Board
 
 ```
 
-- This class src code represents a single cell on the game board 
+
+
+- This class src code represents a single cell on the game board
+
+  
 
 ``` C#
 {
@@ -153,10 +159,15 @@ public class Cell
 
 ```
 
+
+
 - This is the main entry point for our minesweeper application.
 
-``` 
-C#
+
+
+  
+
+```C# 
 {
 
 /// <summary>
