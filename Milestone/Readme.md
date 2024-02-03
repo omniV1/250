@@ -217,3 +217,13 @@ class Program
     }
 }
 ```
+
+--- 
+
+### Running program 
+
+- This image shows our current console.out to the terminal when we run program.cs.
+
+  ![Running program](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/program-running.png)
+
+
