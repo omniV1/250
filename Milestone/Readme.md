@@ -20,6 +20,8 @@
 
 ### Src code 
 
+ - This code reprsents the game board, which is a square grid of cells. 
+
 ``` C#
 {
 using System;
