@@ -16,6 +16,11 @@ public class Board
     // The difficulty level, represented as a percentage of cells that will be "live".
     public float Difficulty { get; set; }
 
+    // A constant value to indicate a cell is a bomb.
+    public const int BombIndicator = 9;
+
+
+
     /// <summary>
     /// Constructor for the Board class. Initializes a square grid of Cell objects.
     /// </summary>
@@ -60,7 +65,6 @@ public class Board
             }
         }
     }
-
     /// <summary>
     /// Calculates the live neighbors for each cell in the grid.
     /// </summary>
@@ -70,29 +74,32 @@ public class Board
         {
             for (int j = 0; j < Size; j++)
             {
+                // If the cell is a bomb, set its neighbor count to the bomb indicator.
                 if (Grid[i, j].Live)
                 {
-                    // If the cell itself is live, set its neighbor count to 9.
-                    Grid[i, j].LiveNeighbors = 9;
+                    Grid[i, j].LiveNeighbors = BombIndicator;
+                    continue;
                 }
-                else
+
+                // Check all neighboring cells.
+                int liveNeighbors = 0;
+                for (int x = Math.Max(i - 1, 0); x <= Math.Min(i + 1, Size - 1); x++)
                 {
-                    // Check all neighboring cells.
-                    int liveNeighbors = 0;
-                    for (int x = Math.Max(i - 1, 0); x <= Math.Min(i + 1, Size - 1); x++)
+                    for (int y = Math.Max(j - 1, 0); y <= Math.Min(j + 1, Size - 1); y++)
                     {
-                        for (int y = Math.Max(j - 1, 0); y <= Math.Min(j + 1, Size - 1); y++)
+                        if (Grid[x, y].Live && !(x == i && y == j))
                         {
-                            if (Grid[x, y].Live && !(x == i && y == j))
-                            {
-                                liveNeighbors++;
-                            }
+                            liveNeighbors++;
                         }
                     }
-
-                    Grid[i, j].LiveNeighbors = liveNeighbors;
                 }
+
+                // Update the live neighbor count for the cell.
+                Grid[i, j].LiveNeighbors = liveNeighbors;
             }
         }
     }
 }
+
+
+
