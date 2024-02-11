@@ -1,5 +1,12 @@
-﻿
+﻿using System.Net.NetworkInformation;
 
+/// Owen Lindsey
+/// Milestone 2
+/// 2/11/2024
+/// This was done with the help of 
+/// online resource: King, J. C# Jagged Array vs Multidemensional Array : Youtube./ https://www.youtube.com/watch?v=3UcJGikWJxs
+///online resource: Sluiter, S. C# Chess Board 05 print board squares : Youtube./ https://www.youtube.com/watch?v=U9dsYjKaEAo&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=5
+///online resource: Sluiter, S. C# Chess Board 07 challenges : Youtube./ https://www.youtube.com/watch?v=xYdhGa3ZF1I&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=7
 
 /// <summary>
 /// The main entry point for the console application.

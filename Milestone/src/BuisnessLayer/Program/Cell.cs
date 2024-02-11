@@ -18,7 +18,7 @@ public class Cell
     /// </summary>
     public Cell()
     {
-        // The properties are already initialized with default values.
+        
     }
 }
 
