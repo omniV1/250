@@ -47,16 +47,12 @@
 
 # UML Diagrams 
 
-## Properties
+
 - `Size`: Length of the board's sides, indicating the number of cells horizontally and vertically.
 - `Grid`: A two-dimensional array holding `Cell` objects that make up the game board.
 - `Difficulty`: Determines the density of bombs on the board.
 - `BombIndicator`: A special constant to mark cells containing bombs.
 
-## Construction
-- The constructor sets up the board with a given size and default difficulty, initializing each cell with its position.
-
-## Functionality
 - `SetupLiveNeighbors`: Randomly places bombs on the board according to the difficulty.
 - `CalculateLiveNeighbors`: Determines the number of adjacent bombs for each cell, marking bomb cells with the bomb indicator.
 
