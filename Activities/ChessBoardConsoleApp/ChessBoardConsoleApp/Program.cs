@@ -21,7 +21,7 @@ class Program
                 for (int j = 0; j < myBoard.Size; j++)
                 {
                     // Choose the appropriate character
-                    char symbol = myBoard.theGrid[i, j].CurrentlyOcupied ? 'X' :
+                    char symbol = myBoard.theGrid[i, j].CurrentlyOccupied ? 'X' :
                                   myBoard.theGrid[i, j].LegalNextMove ? '+' : ' ';
 
                     // Print the cell with borders
@@ -60,7 +60,7 @@ class Program
             currentRow--;
             currentCol--;
 
-            myBoard.theGrid[currentRow, currentCol].CurrentlyOcupied = true;
+            myBoard.theGrid[currentRow, currentCol].CurrentlyOccupied = true;
 
             return myBoard.theGrid[currentRow, currentCol];
         }

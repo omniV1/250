@@ -17,8 +17,8 @@
   "libraries": {
     "ChessBoardmodel/1.0.0": {
       "type": "project",
-      "path": "../../../../../../OneDrive/Desktop/ChessBoardModel/ChessBoardmodel.csproj",
-      "msbuildProject": "../../../../../../OneDrive/Desktop/ChessBoardModel/ChessBoardmodel.csproj"
+      "path": "../../ChessBoardGuiApp/ChessBoardModel/ChessBoardmodel.csproj",
+      "msbuildProject": "../../ChessBoardGuiApp/ChessBoardModel/ChessBoardmodel.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -58,6 +58,9 @@
             },
             "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj": {
               "projectPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardConsoleApp\\ChessBoardModel\\ChessBoardModel.csproj"
+            },
+            "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardGuiApp\\ChessBoardModel\\ChessBoardmodel.csproj": {
+              "projectPath": "C:\\Users\\Owenl\\source\\repos\\250\\Activities\\ChessBoardGuiApp\\ChessBoardModel\\ChessBoardmodel.csproj"
             }
           }
         }
@@ -82,18 +85,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x86",
-            "version": "[6.0.24, 6.0.24]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

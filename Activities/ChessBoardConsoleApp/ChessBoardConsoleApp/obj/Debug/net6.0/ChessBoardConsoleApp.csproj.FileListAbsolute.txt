@@ -16,3 +16,4 @@ C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsol
 C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.pdb
 C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.genruntimeconfig.cache
 C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ref\ChessBoardConsoleApp.dll
+C:\Users\Owenl\source\repos\250\Activities\ChessBoardConsoleApp\ChessBoardConsoleApp\obj\Debug\net6.0\ChessBoardConsoleApp.sourcelink.json
