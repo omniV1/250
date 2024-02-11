@@ -443,6 +443,6 @@ class Program
 
 - This image shows our current console.out to the terminal when we run program.cs.
 
-  ![Running program](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/program-running.png)
+  ![Running program](https://github.com/omniV1/250/blob/main/Milestone/screenshots/Screenshot%202024-02-11%20125409.png)
 
 
