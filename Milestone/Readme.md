@@ -1,18 +1,91 @@
 ##### Owen Lindsey
 ##### CST-250
-##### Milestone 1
----
-### UML Diagrams 
+##### 2/11/2024 
+##### this was done with the help of 
+##### 
 
-- The Board class is responsible for setting the size, difficulty (amount of bombs) , and the grid itself that displays in the console. 
+#####  online resource: King, J. C# Jagged Array vs Multidemensional Array : Youtube./ https://www.youtube.com/watch?v=3UcJGikWJxs
+#####  online resource: Sluiter, S. C# Chess Board 05 print board squares : Youtube./ https://www.youtube.com/watch?v=U9dsYjKaEAo&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=5
+#####  online resource: Sluiter, S. C# Chess Board 07 challenges : Youtube./ https://www.youtube.com/watch?v=xYdhGa3ZF1I&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=7
+---
+
+# Minesweeper Game - Milestone 2 
+
+### Key Features
+- **Board Initialization**: The game begins by creating a 10x10 board, where bombs are placed randomly based on the difficulty level.
+- **Gameplay Loop**: Players enter coordinates for the row and column they wish to reveal. The game continues until a bomb is hit or all safe cells are revealed.
+- **Victory Check**: After each move, the game checks if the player has won by revealing all non-bomb cells.
+- **User Interface**: The board is displayed in the console with clear demarcation of cells, using `.` for unvisited cells, `B` for bombs, and numbers representing the count of adjacent bombs.
+
+### Classes and Methods
+- `Program`
+  - Contains the `Main` method, which drives the game by initializing the board and entering the gameplay loop.
+  - `PrintBoard` method for displaying the board in a user-friendly format.
+- `Board`
+  - Manages the board size, the grid of cells, and the overall difficulty.
+  - Methods for setting up bombs (`SetupLiveNeighbors`) and calculating adjacent live cells (`CalculateLiveNeighbors`).
+- `Cell`
+  - Represents each cell on the board with properties such as row, column, visited, live, and the count of live neighbors.
+  - Includes methods to access and mutate its state, like `SetVisited` and `SetLive`.
+
+### Enhancements in Milestone 2
+- Improved `PrintBoard` method for enhanced readability and aesthetics in the console.
+-  User input handling to check for zero-based array indexing, which corrects the previous off-by-one error.
+-  Check for victory conditions.
+  
+# logic flowchart 
+
+### Gameplay Mechanics
+1. The board is printed to the console with initial hidden cells.
+2. The user inputs their desired cell to reveal.
+3. Input is validated and checked against the board's state.
+4. If a bomb is revealed, the game ends with a loss. Otherwise, gameplay continues.
+5. If all safe cells are revealed, the game ends with a win.
+
+
+![flowchart](https://github.com/omniV1/250/blob/main/Milestone/src/screenshots/Milestone.drawio.png)
+
+# UML Diagrams 
+
+## Properties
+- `Size`: Length of the board's sides, indicating the number of cells horizontally and vertically.
+- `Grid`: A two-dimensional array holding `Cell` objects that make up the game board.
+- `Difficulty`: Determines the density of bombs on the board.
+- `BombIndicator`: A special constant to mark cells containing bombs.
+
+## Construction
+- The constructor sets up the board with a given size and default difficulty, initializing each cell with its position.
+
+## Functionality
+- `SetupLiveNeighbors`: Randomly places bombs on the board according to the difficulty.
+- `CalculateLiveNeighbors`: Determines the number of adjacent bombs for each cell, marking bomb cells with the bomb indicator.
+
 
 ![Board Uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Board-class.drawio.png)
 
-- The cell calss is repsonsible for setting the cell as an active bomb or an empty space.
+## SetupLiveNeighbors
+Initializes the board with a specified number of bombs, randomly placed based on the game's difficulty setting. It ensures no cell is assigned more than one bomb.
+
+## CalculateLiveNeighbors
+Goes through each cell on the board, counting the number of bombs in adjacent cells. It assigns this count to the cell, or a special bomb indicator if the cell itself contains a bomb.
 
 ![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio.png) 
 
-- The Program class acts as the main entry point for the minesweeper application.
+## Program Class
+Acts as the game's entry point. Initializes the game board, handles user input, and manages the game state.
+
+### Main Method
+- Sets up a 10x10 game board with bombs.
+- Enters a loop, clearing the console and displaying the board.
+- Requests and validates user input for row and column selection.
+- Checks for bombs and victory conditions, ending the game appropriately.
+
+### PrintBoard Method
+Prints the current state of the board, using `.` for hidden cells, `B` for bombs, and numbers for neighbor bomb counts.
+
+### CheckVictory Method
+Determines if all non-bomb cells are revealed, returning true if the player wins.
+ 
 
 ![Program uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio.png) 
 
@@ -25,7 +98,8 @@
    
 
 ``` C#
-{
+
+
 using System;
 
 /// <summary>
@@ -41,6 +115,11 @@ public class Board
 
     // The difficulty level, represented as a percentage of cells that will be "live".
     public float Difficulty { get; set; }
+
+    // A constant value to indicate a cell is a bomb.
+    public const int BombIndicator = 9;
+
+
 
     /// <summary>
     /// Constructor for the Board class. Initializes a square grid of Cell objects.
@@ -86,7 +165,6 @@ public class Board
             }
         }
     }
-
     /// <summary>
     /// Calculates the live neighbors for each cell in the grid.
     /// </summary>
@@ -96,32 +174,35 @@ public class Board
         {
             for (int j = 0; j < Size; j++)
             {
+                // If the cell is a bomb, set its neighbor count to the bomb indicator.
                 if (Grid[i, j].Live)
                 {
-                    // If the cell itself is live, set its neighbor count to 9.
-                    Grid[i, j].LiveNeighbors = 9;
+                    Grid[i, j].LiveNeighbors = BombIndicator;
+                    continue;
                 }
-                else
+
+                // Check all neighboring cells.
+                int liveNeighbors = 0;
+                for (int x = Math.Max(i - 1, 0); x <= Math.Min(i + 1, Size - 1); x++)
                 {
-                    // Check all neighboring cells.
-                    int liveNeighbors = 0;
-                    for (int x = Math.Max(i - 1, 0); x <= Math.Min(i + 1, Size - 1); x++)
+                    for (int y = Math.Max(j - 1, 0); y <= Math.Min(j + 1, Size - 1); y++)
                     {
-                        for (int y = Math.Max(j - 1, 0); y <= Math.Min(j + 1, Size - 1); y++)
+                        if (Grid[x, y].Live && !(x == i && y == j))
                         {
-                            if (Grid[x, y].Live && !(x == i && y == j))
-                            {
-                                liveNeighbors++;
-                            }
+                            liveNeighbors++;
                         }
                     }
-
-                    Grid[i, j].LiveNeighbors = liveNeighbors;
                 }
+
+                // Update the live neighbor count for the cell.
+                Grid[i, j].LiveNeighbors = liveNeighbors;
             }
         }
     }
 }
+
+
+
 
 ```
 
@@ -133,7 +214,7 @@ public class Board
 
 ``` C#
 {
-﻿using System;
+using System;
 
 
 /// <summary>
@@ -153,9 +234,11 @@ public class Cell
     /// </summary>
     public Cell()
     {
-        // The properties are already initialized with default values.
+        
     }
 }
+
+
 
 ```
 
@@ -168,7 +251,15 @@ public class Cell
   
 
 ```C# 
-{
+using System.Net.NetworkInformation;
+
+/// Owen Lindsey
+/// Milestone 2
+/// 2/11/2024
+/// This was done with the help of 
+/// online resource: King, J. C# Jagged Array vs Multidemensional Array : Youtube./ https://www.youtube.com/watch?v=3UcJGikWJxs
+///online resource: Sluiter, S. C# Chess Board 05 print board squares : Youtube./ https://www.youtube.com/watch?v=U9dsYjKaEAo&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=5
+///online resource: Sluiter, S. C# Chess Board 07 challenges : Youtube./ https://www.youtube.com/watch?v=xYdhGa3ZF1I&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=7
 
 /// <summary>
 /// The main entry point for the console application.
@@ -180,42 +271,156 @@ class Program
     /// </summary>
     static void Main(string[] args)
     {
-        // Create an instance of the Board class.
+        // Initialize the board and game state
         Board board = new(10); // Assume a 10x10 board for this example.
         board.SetupLiveNeighbors(); // Place live bombs on the board.
         board.CalculateLiveNeighbors(); // Calculate live neighbors for all cells.
 
-        // Call the PrintBoard method to display the board.
-        PrintBoard(board);
+        bool gameOver = false;
+        while (!gameOver)
+        {
+            Console.Clear(); // Optional: Clear the console for a clean game board display.
+            PrintBoard(board); // Print the current state of the board.
+
+            //  Ask the user for a row and column number.
+            Console.WriteLine("Enter the row number:");
+
+            // Subtract 1 to convert to zero-based index
+            int row = Convert.ToInt32(Console.ReadLine()) - 1; 
+            Console.WriteLine("Enter the column number:");
+
+            // Subtract 1 to convert to zero-based index
+            int column = Convert.ToInt32(Console.ReadLine()) - 1; 
+
+
+            // Validate the input
+            if (row < 0 || row >= board.Size || column < 0 || column >= board.Size)
+            {
+                Console.WriteLine("Invalid coordinates. Please try again.");
+                continue;
+            }
+
+            // Check if the chosen cell contains a bomb.
+            if (board.Grid[row, column].Live)
+            {
+                gameOver = true;
+                Console.WriteLine("Boom! You hit a bomb! Game Over.");
+                break;
+            }
+
+            // Mark the cell as visited
+            board.Grid[row, column].Visited = true;
+
+            // Check if all non-bomb cells have been revealed.
+            board.Grid[row, column].Visited = true; // Mark the cell as visited
+
+            // Check for victory after each move
+            if (CheckVictory(board))
+            {
+                gameOver = true;
+                Console.Clear(); // Clear the console for a final display of the board
+                PrintBoard(board); // Print the final state of the board
+                Console.WriteLine("Congratulations! You've cleared all non-bomb cells!");
+                break;
+            }
+
+            // Print the grid.
+            PrintBoard(board);
+        }
     }
 
-    /// <summary>
-    /// Prints the board to the console. Each cell is represented by a character:
-    /// '.' for an unvisited cell, 'B' for a live bomb, or the number of live neighbors.
-    /// </summary>
-    /// <param name="board">The game board to print.</param>
-    static void PrintBoard(Board board)
-    {
+        /// <summary>
+        /// Prints the board to the console. Each cell is represented by a character:
+        /// '.' for an unvisited cell, 'B' for a live bomb, or the number of live neighbors.
+        /// </summary>
+        /// <param name="board">The game board to print.</param>
+        // New method to display the board during the game
+        public static void PrintBoard(Board board)
+            {
+        // Top border
+        Console.Write("   "); // Space for row numbers
+        for (int k = 0; k < board.Size; k++)
+        {
+            Console.Write("+---");
+        }
+        Console.WriteLine("+"); // Rightmost border
+
         for (int i = 0; i < board.Size; i++)
         {
+            // Print the row number at the start of the row with padding for single digit numbers
+            Console.Write((i < 9 ? " " : "") + (i + 1) + " |");
+
             for (int j = 0; j < board.Size; j++)
             {
-                // If the cell is a live bomb, print 'B'.
-                if (board.Grid[i, j].Live)
+                // Directly access the Cell properties
+                Cell cell = board.Grid[i, j];
+                char symbol;
+                if (cell.Visited)
                 {
-                    Console.Write("B ");
+                    // Display the number of live neighbors or an empty square
+                    symbol = cell.LiveNeighbors > 0 ? cell.LiveNeighbors.ToString()[0] : ' ';
                 }
                 else
                 {
-                    // If the cell is not visited, print '.', otherwise print the number of live neighbors.
-                    char toPrint = board.Grid[i, j].Visited ? board.Grid[i, j].LiveNeighbors.ToString()[0] : '.';
-                    Console.Write($"{toPrint} ");
+                    // Unvisited cells are represented with a question mark
+                    symbol = '?';
+                }
+
+                // Print the cell with borders
+                Console.Write(" " + symbol + " |");
+            }
+
+            // End of row
+            Console.WriteLine();
+
+            // Print the row separator
+            Console.Write("   "); // Space for row numbers
+            for (int k = 0; k < board.Size; k++)
+            {
+                Console.Write("+---");
+            }
+            Console.WriteLine("+"); // Rightmost border
+        }
+
+        // Print the column numbers at the bottom
+        Console.Write("    "); // Align with the column
+        for (int i = 0; i < board.Size; i++)
+        {
+            // Adjusted for single digit numbers with proper spacing
+            Console.Write(" " + (i + 1) + "  ");
+        }
+        Console.WriteLine();
+        Console.WriteLine("    " + new string('=', 4 * board.Size)); // Adjusted the bottom line
+    }
+
+    /// <summary>
+    /// Checks if the player has won the game by revealing all non-bomb cells.
+    /// </summary>
+    /// <param name="board">The game board containing all cells.</param>
+    /// <returns>
+    /// A boolean value that is true if all non-bomb cells have been revealed and false otherwise.
+    /// This indicates whether the player has successfully completed the game without hitting a bomb.
+    /// </returns>
+    private static bool CheckVictory(Board board)
+        {
+            for (int i = 0; i < board.Size; i++)
+            {
+                for (int j = 0; j < board.Size; j++)
+                {
+                    Cell cell = board.Grid[i, j];
+                    // If there's a cell that is not a bomb and has not been visited, the player hasn't won yet.
+                    if (!cell.Live && !cell.Visited)
+                    {
+                        return false;
+                    }
                 }
             }
-            Console.WriteLine(); // New line after each row.
+            // If all non-bomb cells have been visited, the player wins.
+            return true;
         }
+
+
     }
-}
 ```
 
 --- 
