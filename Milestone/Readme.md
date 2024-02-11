@@ -1,20 +1,23 @@
 ##### Owen Lindsey
 ##### CST-250
-##### Milestone 2
+##### 2/11/2024 
+##### this was done with the help of 
+##### 
+
+#####  online resource: King, J. C# Jagged Array vs Multidemensional Array : Youtube./ https://www.youtube.com/watch?v=3UcJGikWJxs
+#####  online resource: Sluiter, S. C# Chess Board 05 print board squares : Youtube./ https://www.youtube.com/watch?v=U9dsYjKaEAo&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=5
+#####  online resource: Sluiter, S. C# Chess Board 07 challenges : Youtube./ https://www.youtube.com/watch?v=xYdhGa3ZF1I&list=PLhPyEFL5u-i0YDRW6FLMd1PavZp9RcYdF&index=7
 ---
 
-# Minesweeper Game - Milestone 2 Synopsis
+# Minesweeper Game - Milestone 2 
 
-## Overview
-In this milestone, we've implemented a console-based version of the classic Minesweeper game. The program is written in C# and showcases object-oriented programming principles.
-
-## Key Features
+### Key Features
 - **Board Initialization**: The game begins by creating a 10x10 board, where bombs are placed randomly based on the difficulty level.
 - **Gameplay Loop**: Players enter coordinates for the row and column they wish to reveal. The game continues until a bomb is hit or all safe cells are revealed.
 - **Victory Check**: After each move, the game checks if the player has won by revealing all non-bomb cells.
 - **User Interface**: The board is displayed in the console with clear demarcation of cells, using `.` for unvisited cells, `B` for bombs, and numbers representing the count of adjacent bombs.
 
-## Classes and Methods
+### Classes and Methods
 - `Program`
   - Contains the `Main` method, which drives the game by initializing the board and entering the gameplay loop.
   - `PrintBoard` method for displaying the board in a user-friendly format.
@@ -25,16 +28,14 @@ In this milestone, we've implemented a console-based version of the classic Mine
   - Represents each cell on the board with properties such as row, column, visited, live, and the count of live neighbors.
   - Includes methods to access and mutate its state, like `SetVisited` and `SetLive`.
 
-
-
-## Enhancements in Milestone 2
+### Enhancements in Milestone 2
 - Improved `PrintBoard` method for enhanced readability and aesthetics in the console.
 -  User input handling to check for zero-based array indexing, which corrects the previous off-by-one error.
 -  Check for victory conditions.
--  
+  
 # logic flowchart 
 
-## Gameplay Mechanics
+### Gameplay Mechanics
 1. The board is printed to the console with initial hidden cells.
 2. The user inputs their desired cell to reveal.
 3. Input is validated and checked against the board's state.
