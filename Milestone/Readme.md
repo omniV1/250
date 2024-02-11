@@ -1,8 +1,48 @@
 ##### Owen Lindsey
 ##### CST-250
-##### Milestone 1
+##### Milestone 2
 ---
-### UML Diagrams 
+
+# Minesweeper Game - Milestone 2 Synopsis
+
+## Overview
+In this milestone, we've implemented a console-based version of the classic Minesweeper game. The program is written in C# and showcases object-oriented programming principles.
+
+## Key Features
+- **Board Initialization**: The game begins by creating a 10x10 board, where bombs are placed randomly based on the difficulty level.
+- **Gameplay Loop**: Players enter coordinates for the row and column they wish to reveal. The game continues until a bomb is hit or all safe cells are revealed.
+- **Victory Check**: After each move, the game checks if the player has won by revealing all non-bomb cells.
+- **User Interface**: The board is displayed in the console with clear demarcation of cells, using `.` for unvisited cells, `B` for bombs, and numbers representing the count of adjacent bombs.
+
+## Classes and Methods
+- `Program`
+  - Contains the `Main` method, which drives the game by initializing the board and entering the gameplay loop.
+  - `PrintBoard` method for displaying the board in a user-friendly format.
+- `Board`
+  - Manages the board size, the grid of cells, and the overall difficulty.
+  - Methods for setting up bombs (`SetupLiveNeighbors`) and calculating adjacent live cells (`CalculateLiveNeighbors`).
+- `Cell`
+  - Represents each cell on the board with properties such as row, column, visited, live, and the count of live neighbors.
+  - Includes methods to access and mutate its state, like `SetVisited` and `SetLive`.
+
+
+
+## Enhancements in Milestone 2
+- Improved `PrintBoard` method for enhanced readability and aesthetics in the console.
+-  User input handling to check for zero-based array indexing, which corrects the previous off-by-one error.
+-  Check for victory conditions.
+-  
+# logic flowchart 
+
+## Gameplay Mechanics
+1. The board is printed to the console with initial hidden cells.
+2. The user inputs their desired cell to reveal.
+3. Input is validated and checked against the board's state.
+4. If a bomb is revealed, the game ends with a loss. Otherwise, gameplay continues.
+5. If all safe cells are revealed, the game ends with a win.
+# UML Diagrams 
+
+![flowchart]()
 
 - The Board class is responsible for setting the size, difficulty (amount of bombs) , and the grid itself that displays in the console. 
 
@@ -12,7 +52,7 @@
 
 ![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio.png) 
 
-- The Program class acts as the main entry point for the minesweeper application.
+- The Program class acts as the main entry point for the minesweeper application. Also repsonible for updating the state of the board with our print board and check victory methods.  
 
 ![Program uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio.png) 
 
