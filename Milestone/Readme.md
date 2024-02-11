@@ -42,7 +42,7 @@ In this milestone, we've implemented a console-based version of the classic Mine
 5. If all safe cells are revealed, the game ends with a win.
 # UML Diagrams 
 
-![flowchart]()
+![flowchart](https://github.com/omniV1/250/blob/main/Milestone/src/screenshots/Milestone.drawio.png)
 
 - The Board class is responsible for setting the size, difficulty (amount of bombs) , and the grid itself that displays in the console. 
 
