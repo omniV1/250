@@ -64,15 +64,18 @@
 ![Board Uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Board-class.drawio.png)
 
 ## SetupLiveNeighbors
-Initializes the board with a specified number of bombs, randomly placed based on the game's difficulty setting. It ensures no cell is assigned more than one bomb.
+
+- Initializes the board with a specified number of bombs, randomly placed based on the game's difficulty setting. It ensures no cell is assigned more than one bomb.
 
 ## CalculateLiveNeighbors
-Goes through each cell on the board, counting the number of bombs in adjacent cells. It assigns this count to the cell, or a special bomb indicator if the cell itself contains a bomb.
+
+- Goes through each cell on the board, counting the number of bombs in adjacent cells. It assigns this count to the cell, or a special bomb indicator if the cell itself contains a bomb.
 
 ![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio.png) 
 
 ## Program Class
-Acts as the game's entry point. Initializes the game board, handles user input, and manages the game state.
+
+- Acts as the game's entry point. Initializes the game board, handles user input, and manages the game state.
 
 ### Main Method
 - Sets up a 10x10 game board with bombs.
@@ -81,10 +84,12 @@ Acts as the game's entry point. Initializes the game board, handles user input, 
 - Checks for bombs and victory conditions, ending the game appropriately.
 
 ### PrintBoard Method
-Prints the current state of the board, using `.` for hidden cells, `B` for bombs, and numbers for neighbor bomb counts.
+
+- Prints the current state of the board, using `.` for hidden cells, `B` for bombs, and numbers for neighbor bomb counts.
 
 ### CheckVictory Method
-Determines if all non-bomb cells are revealed, returning true if the player wins.
+
+- Determines if all non-bomb cells are revealed, returning true if the player wins.
  
 
 ![Program uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio.png) 
