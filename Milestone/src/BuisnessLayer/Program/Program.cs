@@ -24,9 +24,13 @@ class Program
 
             //  Ask the user for a row and column number.
             Console.WriteLine("Enter the row number:");
-            int row = Convert.ToInt32(Console.ReadLine()) - 1; // Subtract 1 to convert to zero-based index
+
+            // Subtract 1 to convert to zero-based index
+            int row = Convert.ToInt32(Console.ReadLine()) - 1; 
             Console.WriteLine("Enter the column number:");
-            int column = Convert.ToInt32(Console.ReadLine()) - 1; // Subtract 1 to convert to zero-based index
+
+            // Subtract 1 to convert to zero-based index
+            int column = Convert.ToInt32(Console.ReadLine()) - 1; 
 
 
             // Validate the input
@@ -36,7 +40,7 @@ class Program
                 continue;
             }
 
-            // Step 2: Check if the chosen cell contains a bomb.
+            // Check if the chosen cell contains a bomb.
             if (board.Grid[row, column].Live)
             {
                 gameOver = true;
@@ -47,7 +51,7 @@ class Program
             // Mark the cell as visited
             board.Grid[row, column].Visited = true;
 
-            // Step 3: Check if all non-bomb cells have been revealed.
+            // Check if all non-bomb cells have been revealed.
             board.Grid[row, column].Visited = true; // Mark the cell as visited
 
             // Check for victory after each move
@@ -60,7 +64,7 @@ class Program
                 break;
             }
 
-            // Step 4: Print the grid.
+            // Print the grid.
             PrintBoard(board);
         }
     }
