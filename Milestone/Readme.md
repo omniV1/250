@@ -92,7 +92,7 @@
 - Determines if all non-bomb cells are revealed, returning true if the player wins.
  
 
-![Program uml](hhttps://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio%20.png) 
+![Program-uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio%20.png) 
 
 ---
 
