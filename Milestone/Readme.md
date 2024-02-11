@@ -61,7 +61,7 @@
 - `CalculateLiveNeighbors`: Determines the number of adjacent bombs for each cell, marking bomb cells with the bomb indicator.
 
 
-![Board Uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Board-class.drawio.png)
+![Board Uml]()
 
 ## SetupLiveNeighbors
 
@@ -71,7 +71,7 @@
 
 - Goes through each cell on the board, counting the number of bombs in adjacent cells. It assigns this count to the cell, or a special bomb indicator if the cell itself contains a bomb.
 
-![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio.png) 
+![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio%20.png) 
 
 ## Program Class
 
