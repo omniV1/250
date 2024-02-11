@@ -43,7 +43,7 @@
 5. If all safe cells are revealed, the game ends with a win.
 
 
-![flowchart](https://github.com/omniV1/250/blob/main/Milestone/src/screenshots/Milestone.drawio.png)
+![flowchart](https://github.com/omniV1/250/blob/main/Milestone/screenshots/milestone_flowchart.drawio.png)
 
 # UML Diagrams 
 
