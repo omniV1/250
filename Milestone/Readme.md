@@ -43,51 +43,65 @@
 5. If all safe cells are revealed, the game ends with a win.
 
 
-![flowchart](https://github.com/omniV1/250/blob/main/Milestone/src/screenshots/Milestone.drawio.png)
+![flowchart](https://github.com/omniV1/250/blob/main/Milestone/screenshots/milestone_flowchart.drawio.png)
 
 # UML Diagrams 
 
-## Properties
+## Board class UML; 
+
+### Properites 
 - `Size`: Length of the board's sides, indicating the number of cells horizontally and vertically.
 - `Grid`: A two-dimensional array holding `Cell` objects that make up the game board.
 - `Difficulty`: Determines the density of bombs on the board.
 - `BombIndicator`: A special constant to mark cells containing bombs.
 
-## Construction
-- The constructor sets up the board with a given size and default difficulty, initializing each cell with its position.
-
-## Functionality
+### Methods
 - `SetupLiveNeighbors`: Randomly places bombs on the board according to the difficulty.
 - `CalculateLiveNeighbors`: Determines the number of adjacent bombs for each cell, marking bomb cells with the bomb indicator.
 
 
-![Board Uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Board-class.drawio.png)
+![Board Uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Board-class.drawio%20.png)
 
-## SetupLiveNeighbors
-Initializes the board with a specified number of bombs, randomly placed based on the game's difficulty setting. It ensures no cell is assigned more than one bomb.
+## Cell class UML: 
 
-## CalculateLiveNeighbors
-Goes through each cell on the board, counting the number of bombs in adjacent cells. It assigns this count to the cell, or a special bomb indicator if the cell itself contains a bomb.
+### Properties
+- `row`: The row index of the cell in the grid.
+- `column`: The column index of the cell in the grid.
+- `visited`: A boolean indicating whether the cell has been revealed.
+- `live`: A boolean indicating whether the cell is a bomb.
+- `liveNeighbors`: An integer count of adjacent bombs.
 
-![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio.png) 
+### Constructor
+- `Cell(row: int, column: int)`: Initializes a new instance of the `Cell` class with specified row and column indices.
 
-## Program Class
-Acts as the game's entry point. Initializes the game board, handles user input, and manages the game state.
+### Methods
+- `getRow()`: Returns the row index.
+- `getColumn()`: Returns the column index.
+- `isVisited()`: Returns whether the cell has been visited.
+- `setVisited(visited: boolean)`: Sets the cell as visited or unvisited.
+- `isLive()`: Returns whether the cell is a bomb.
+- `setLive(live: boolean)`: Sets the cell as containing a bomb or not.
+- `getLiveNeighbors()`: Returns the count of live neighbors.
+- `setLiveNeighbors(liveNeighbors: int)`: Sets the count of live neighbors.
 
-### Main Method
+
+![Cell uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Cell-Class.drawio%20.png) 
+
+## Program class UML: 
+
+### Properties 
+ `Main Method`: 
 - Sets up a 10x10 game board with bombs.
 - Enters a loop, clearing the console and displaying the board.
 - Requests and validates user input for row and column selection.
 - Checks for bombs and victory conditions, ending the game appropriately.
 
-### PrintBoard Method
-Prints the current state of the board, using `.` for hidden cells, `B` for bombs, and numbers for neighbor bomb counts.
-
-### CheckVictory Method
-Determines if all non-bomb cells are revealed, returning true if the player wins.
+#### Methods
+- `PrintBoard` Method Prints the current state of the board, using `.` for hidden cells, `B` for bombs, and numbers for neighbor bomb counts
+- `CheckVictory` Method Determines if all non-bomb cells are revealed, returning true if the player wins.
  
 
-![Program uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio.png) 
+![Program-uml](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/CST-250-Program-class.drawio%20.png) 
 
 ---
 
@@ -429,6 +443,6 @@ class Program
 
 - This image shows our current console.out to the terminal when we run program.cs.
 
-  ![Running program](https://github.com/omniV1/250/blob/main/Milestone/UML-diagrams/program-running.png)
+  ![Running program](https://github.com/omniV1/250/blob/main/Milestone/screenshots/Screenshot%202024-02-11%20125409.png)
 
 
