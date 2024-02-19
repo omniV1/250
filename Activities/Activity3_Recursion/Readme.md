@@ -23,8 +23,6 @@
 
 ## 3. Greatest Common Divisor
 
-### Theory of operations: 
-
 - The Main method initializes two integers, number1 with a value of 250 and number2 with a value of 12. It then calls the gcd method with these two numbers and stores the result in the variable answer.
 The gcd method checks if n2 is 0. If it is, the method returns n1 as the GCD. Otherwise, it prints the current remainder (n1 % n2) using Console.Out.WriteLine and calls itself recursively with n2 and n1 % n2 as the new parameters.
 This recursive calling continues until n2 becomes 0. At each step, if n2 is not 0, it prints the message indicating the current remainder.
@@ -35,3 +33,8 @@ Finally, it prints "The gcd of 250 and 12 is 2".
 ![GCD](https://github.com/omniV1/250/blob/main/Activities/Activity3_Recursion/screenshots/GCD-250-12.png)
 
 ## 4. KnightsTour
+
+
+The screenshot shows a program attempting to solve the Knight's Tour problem, incrementing its attempt count by one million with each output line. This indicates a backtracking algorithm is at work, making a large number of moves to find a solution, and periodically reporting the number of moves attempted, reaching up to 47 million moves. The output does not confirm a successful tour; it merely tracks the algorithm's progress.
+
+![KnightsTour](https://github.com/omniV1/250/blob/main/Activities/Activity3_Recursion/screenshots/KnightsTour.png)
