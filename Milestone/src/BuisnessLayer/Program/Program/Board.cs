@@ -124,9 +124,9 @@ public class Board
             FloodFill(row + 1, col - 1); // Southwest
             FloodFill(row + 1, col + 1); // Southeast
         }
-     
-    }
 
+    }
+}
 
 
 

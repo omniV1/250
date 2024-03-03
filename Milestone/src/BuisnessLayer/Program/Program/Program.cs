@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net.NetworkInformation;
+﻿using System.Net.NetworkInformation;
 
 /// Owen Lindsey
 /// Milestone 2
@@ -79,18 +78,26 @@ class Program
     // New method to display the board during the game
     public static void PrintBoard(Board board)
     {
+        // Print column numbers on the top
+        Console.Write("     "); // Adjust spacing to align with the grid
+        for (int col = 0; col < board.Size; col++)
+        {
+            Console.Write("{0,2}  ", col + 1); // Adjusted for single digit numbers with proper spacing
+        }
+        Console.WriteLine();
+
         // Top border
-        Console.Write("   "); // Space for row numbers
+        Console.Write("   +");
         for (int k = 0; k < board.Size; k++)
         {
-            Console.Write("+---");
+            Console.Write("---+");
         }
-        Console.WriteLine("+"); // Rightmost border
+        Console.WriteLine();
 
         for (int i = 0; i < board.Size; i++)
         {
-            // Print the row number at the start of the row with padding for single digit numbers
-            Console.Write((i < 9 ? " " : "") + (i + 1) + " |");
+            // Print the row number at the start of the row with padding for single-digit numbers
+            Console.Write("{0,2} |", i + 1);
 
             for (int j = 0; j < board.Size; j++)
             {
@@ -99,31 +106,40 @@ class Program
                 {
                     if (cell.LiveNeighbors > 0)
                     {
-                        Console.Write(cell.LiveNeighbors + " ");
+                        Console.Write(" {0} |", cell.LiveNeighbors); // Pad single digits for alignment
                     }
                     else
                     {
-                        Console.Write("  "); // Two spaces for cells with no neighbors
+                        Console.Write(" ~ |"); // Empty space for cells with no neighbors
                     }
                 }
                 else
                 {
-                    Console.Write("? "); // Question mark for unvisited cells
+                    Console.Write(" ? |"); // Question mark for unvisited cells
                 }
-                Console.Write("|"); // Cell border
             }
 
-            Console.WriteLine(); // Move to the next line after printing a row
+            Console.WriteLine();
 
             // Print the row separator
-            Console.Write("   "); // Space for row numbers
+            Console.Write("   +");
             for (int k = 0; k < board.Size; k++)
             {
-                Console.Write("+---");
+                Console.Write("---+");
             }
-            Console.WriteLine("+"); // Rightmost border
+            Console.WriteLine();
         }
+
+        // Print column numbers on the bottom
+        Console.Write("     "); // Adjust spacing to align with the grid
+        for (int col = 0; col < board.Size; col++)
+        {
+            Console.Write("{0,2}  ", col + 1); // Adjusted for single digit numbers with proper spacing
+        }
+        Console.WriteLine();
     }
+
+
 
 
     /// <summary>
