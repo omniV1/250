@@ -1,4 +1,5 @@
-﻿using System.Net.NetworkInformation;
+﻿using System;
+using System.Net.NetworkInformation;
 
 /// Owen Lindsey
 /// Milestone 2
@@ -29,16 +30,11 @@ class Program
             Console.Clear(); // Optional: Clear the console for a clean game board display.
             PrintBoard(board); // Print the current state of the board.
 
-            //  Ask the user for a row and column number.
+            // Ask the user for a row and column number.
             Console.WriteLine("Enter the row number:");
-
-            // Subtract 1 to convert to zero-based index
-            int row = Convert.ToInt32(Console.ReadLine()) - 1; 
+            int row = Convert.ToInt32(Console.ReadLine()) - 1; // Subtract 1 to convert to zero-based index
             Console.WriteLine("Enter the column number:");
-
-            // Subtract 1 to convert to zero-based index
-            int column = Convert.ToInt32(Console.ReadLine()) - 1; 
-
+            int column = Convert.ToInt32(Console.ReadLine()) - 1; // Subtract 1 to convert to zero-based index
 
             // Validate the input
             if (row < 0 || row >= board.Size || column < 0 || column >= board.Size)
@@ -54,12 +50,14 @@ class Program
                 Console.WriteLine("Boom! You hit a bomb! Game Over.");
                 break;
             }
-
-            // Mark the cell as visited
-            board.Grid[row, column].Visited = true;
-
-            // Check if all non-bomb cells have been revealed.
-            board.Grid[row, column].Visited = true; // Mark the cell as visited
+            else if (board.Grid[row, column].LiveNeighbors == 0)
+            {
+                board.FloodFill(row, column); // Call the flood fill method
+            }
+            else
+            {
+                board.Grid[row, column].Visited = true; // Reveal the current cell
+            }
 
             // Check for victory after each move
             if (CheckVictory(board))
@@ -70,20 +68,17 @@ class Program
                 Console.WriteLine("Congratulations! You've cleared all non-bomb cells!");
                 break;
             }
-
-            // Print the grid.
-            PrintBoard(board);
         }
     }
 
-        /// <summary>
-        /// Prints the board to the console. Each cell is represented by a character:
-        /// '.' for an unvisited cell, 'B' for a live bomb, or the number of live neighbors.
-        /// </summary>
-        /// <param name="board">The game board to print.</param>
-        // New method to display the board during the game
-        public static void PrintBoard(Board board)
-            {
+    /// <summary>
+    /// Prints the board to the console. Each cell is represented by a character:
+    /// '.' for an unvisited cell, 'B' for a live bomb, or the number of live neighbors.
+    /// </summary>
+    /// <param name="board">The game board to print.</param>
+    // New method to display the board during the game
+    public static void PrintBoard(Board board)
+    {
         // Top border
         Console.Write("   "); // Space for row numbers
         for (int k = 0; k < board.Size; k++)
@@ -99,26 +94,26 @@ class Program
 
             for (int j = 0; j < board.Size; j++)
             {
-                // Directly access the Cell properties
                 Cell cell = board.Grid[i, j];
-                char symbol;
                 if (cell.Visited)
                 {
-                    // Display the number of live neighbors or an empty square
-                    symbol = cell.LiveNeighbors > 0 ? cell.LiveNeighbors.ToString()[0] : ' ';
+                    if (cell.LiveNeighbors > 0)
+                    {
+                        Console.Write(cell.LiveNeighbors + " ");
+                    }
+                    else
+                    {
+                        Console.Write("  "); // Two spaces for cells with no neighbors
+                    }
                 }
                 else
                 {
-                    // Unvisited cells are represented with a question mark
-                    symbol = '?';
+                    Console.Write("? "); // Question mark for unvisited cells
                 }
-
-                // Print the cell with borders
-                Console.Write(" " + symbol + " |");
+                Console.Write("|"); // Cell border
             }
 
-            // End of row
-            Console.WriteLine();
+            Console.WriteLine(); // Move to the next line after printing a row
 
             // Print the row separator
             Console.Write("   "); // Space for row numbers
@@ -128,17 +123,8 @@ class Program
             }
             Console.WriteLine("+"); // Rightmost border
         }
-
-        // Print the column numbers at the bottom
-        Console.Write("    "); // Align with the column
-        for (int i = 0; i < board.Size; i++)
-        {
-            // Adjusted for single digit numbers with proper spacing
-            Console.Write(" " + (i + 1) + "  ");
-        }
-        Console.WriteLine();
-        Console.WriteLine("    " + new string('=', 4 * board.Size)); // Adjusted the bottom line
     }
+
 
     /// <summary>
     /// Checks if the player has won the game by revealing all non-bomb cells.

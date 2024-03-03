@@ -99,7 +99,34 @@ public class Board
             }
         }
     }
-}
+    public void FloodFill(int row, int col)
+    {
+        // Check boundary conditions
+        if (row < 0 || row >= Size || col < 0 || col >= Size) return;
+        Cell currentCell = Grid[row, col];
+
+        // If the cell has already been visited or contains a mine, stop recursion
+        if (currentCell.Visited || currentCell.Live) return;
+
+        // Mark the cell as visited
+        currentCell.Visited = true;
+
+        // If the cell has no live neighbors, recursively reveal all its neighbors
+        if (currentCell.LiveNeighbors == 0)
+        {
+            // Recursively call FloodFill on adjacent cells
+            FloodFill(row - 1, col);     // North
+            FloodFill(row + 1, col);     // South
+            FloodFill(row, col - 1);     // West
+            FloodFill(row, col + 1);     // East
+            FloodFill(row - 1, col - 1); // Northwest
+            FloodFill(row - 1, col + 1); // Northeast
+            FloodFill(row + 1, col - 1); // Southwest
+            FloodFill(row + 1, col + 1); // Southeast
+        }
+     
+    }
+
 
 
 
