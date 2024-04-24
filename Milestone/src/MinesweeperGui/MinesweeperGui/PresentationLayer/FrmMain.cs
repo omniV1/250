@@ -1,4 +1,5 @@
 using MinesweeperGui.BusinessLayer;
+using MinesweeperGui.PresentationLayer;
 using System.Diagnostics;
 
 
@@ -131,6 +132,8 @@ namespace MinesweeperGui
             {
                 _stopwatch.Stop();
                 MessageBox.Show($"Congratulations, you won! Time: {_stopwatch.Elapsed.ToString(@"mm\:ss")}");
+                UpdateHighScores(true);  // true indicates a win
+                ShowHighScoresForm();
             }
         }
 
@@ -176,6 +179,8 @@ namespace MinesweeperGui
             }
             _stopwatch.Stop(); // Stop the stopwatch as the game is over.
             MessageBox.Show($"Game Over. Time: {_stopwatch.Elapsed.ToString(@"mm\:ss")}");
+            UpdateHighScores(false);  // assuming false indicates a loss
+            ShowHighScoresForm();
         }
 
         // Retrieves the image used to indicate a cell is flagged.
@@ -210,6 +215,28 @@ namespace MinesweeperGui
                 }
             }
         }
+
+        private void UpdateHighScores(bool won)
+        {
+            var playerStats = new PlayerStats
+            {
+                PlayerInitials = "ABC", // You might want to get this from the user
+                Difficulty = "Easy", // Or however you track difficulty
+                TimeElapsed = _stopwatch.Elapsed
+            };
+
+            var highScores = HighScoresManager.LoadHighScores("HighScores.txt");
+            highScores.Add(playerStats);
+            highScores = highScores.OrderBy(score => score).Take(5).ToList(); // Sort and take the top 5 scores
+            HighScoresManager.SaveHighScores(highScores, "HighScores.txt");
+        }
+
+        private void ShowHighScoresForm()
+        {
+            FrmHighScores highScoresForm = new FrmHighScores();
+            highScoresForm.ShowDialog();
+        }
+
 
     }
 }

@@ -17,6 +17,14 @@ namespace MinesweeperGui.PresentationLayer
         public FrmDifficulty()
         {
             InitializeComponent();
+
+            InitializePlayer();
+        }
+        private void InitializePlayer()
+        {
+          
+            btnHighScores.Click += BtnHighScores_OnClick;
+            
         }
 
         private void BtnStartGame_Click(object sender, EventArgs e)
@@ -37,6 +45,11 @@ namespace MinesweeperGui.PresentationLayer
             this.DialogResult = DialogResult.OK; // To close the difficulty selection form
         }
 
-        
+        private void BtnHighScores_OnClick(object sender, EventArgs e)
+        {
+            FrmHighScores frmHighScores = new FrmHighScores(); 
+            frmHighScores.ShowDialog(); 
+
+        }
     }
 }

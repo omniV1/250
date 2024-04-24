@@ -34,6 +34,7 @@
             // 
             // MinesweeperTableLayout
             // 
+            MinesweeperTableLayout.BackColor = Color.Lavender;
             MinesweeperTableLayout.BackgroundImageLayout = ImageLayout.None;
             MinesweeperTableLayout.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
             MinesweeperTableLayout.ColumnCount = 10;
